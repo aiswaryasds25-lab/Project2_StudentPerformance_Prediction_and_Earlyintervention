@@ -1,4 +1,3 @@
-# Student Performance Prediction and Early Intervention
 
 ## Team Members
 - Aiswarya S
