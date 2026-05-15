@@ -2,9 +2,12 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
-model         = joblib.load("model.pkl")
-feature_names = joblib.load("feature_names.pkl")
+BASE_DIR = os.path.dirname(__file__)
+
+model = joblib.load(os.path.join(BASE_DIR, "model.pkl"))
+feature_names = joblib.load(os.path.join(BASE_DIR, "feature_names.pkl"))
 
 st.set_page_config(page_title="Student Performance Predictor", layout="wide")
 st.title("🎓 Student Performance Prediction & Early Intervention")
@@ -59,8 +62,7 @@ with col2:
 import lime.lime_tabular
 import matplotlib.pyplot as plt
 
-X_train_vals = joblib.load("X_train.pkl")
-explainer    = joblib.load("lime_explainer.pkl")
+explainer = joblib.load(os.path.join(BASE_DIR, "lime_explainer.pkl"))
 
 st.subheader("🔍 LIME Explanation — Why this prediction?")
 exp = explainer.explain_instance(
