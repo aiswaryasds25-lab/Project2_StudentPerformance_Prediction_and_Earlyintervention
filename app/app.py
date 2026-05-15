@@ -54,3 +54,25 @@ with col2:
     key_features = {"G1": G1, "G2": G2, "Study Time": studytime,
                     "Failures": failures, "Absences": absences, "Age": age}
     st.table(pd.DataFrame(key_features.items(), columns=["Feature", "Value"]))
+
+
+import lime.lime_tabular
+import matplotlib.pyplot as plt
+
+X_train_vals = joblib.load("X_train.pkl")
+explainer    = joblib.load("lime_explainer.pkl")
+
+st.subheader("🔍 LIME Explanation — Why this prediction?")
+exp = explainer.explain_instance(
+    input_df.values[0],
+    model.predict_proba,
+    num_features=10
+)
+fig = exp.as_pyplot_figure()
+plt.tight_layout()
+st.pyplot(fig)
+
+st.markdown("**Key contributing factors:**")
+for feat, weight in exp.as_list():
+    arrow = "🟢" if weight > 0 else "🔴"
+    st.write(f"{arrow} `{feat}` — impact: {weight:.4f}")
