@@ -76,3 +76,27 @@ st.markdown("**Key contributing factors:**")
 for feat, weight in exp.as_list():
     arrow = "🟢" if weight > 0 else "🔴"
     st.write(f"{arrow} `{feat}` — impact: {weight:.4f}")
+
+
+if pred == 0:
+    st.subheader("🚨 Counselor Intervention Suggestions")
+    st.error("This student is predicted to FAIL. Recommended actions:")
+    suggestions = set()
+    for feat, weight in exp.as_list():
+        if weight < 0:
+            if "G1" in feat or "G2" in feat:
+                suggestions.add("📚 Low prior grades — arrange tutoring or academic support.")
+            if "studytime" in feat:
+                suggestions.add("⏰ Low study time — encourage a structured study plan.")
+            if "failures" in feat:
+                suggestions.add("⚠️ Prior failures detected — proactive counseling needed.")
+            if "absences" in feat:
+                suggestions.add("📅 High absences — investigate attendance issues.")
+            if "Dalc" in feat or "Walc" in feat:
+                suggestions.add("🍺 Alcohol consumption may be affecting performance.")
+            if "goout" in feat:
+                suggestions.add("🏠 Excessive socialising may be reducing study time.")
+    for s in suggestions:
+        st.write(s)
+else:
+    st.success("✅ Student is on track. Continue monitoring performance.")
