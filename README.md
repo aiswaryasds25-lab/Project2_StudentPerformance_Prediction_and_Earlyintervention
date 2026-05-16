@@ -10,7 +10,7 @@ Predict whether students will pass or fail using academic and demographic data, 
 
 ## Dataset
 
-The dataset used is included in the `dataset/` folder: `student_mat.csv`
+The dataset used is included in the `data/` folder: `student-mat.csv`
 
 **Source:** [UCI Student Performance Dataset](https://archive.ics.uci.edu/dataset/320/student+performance)
 
