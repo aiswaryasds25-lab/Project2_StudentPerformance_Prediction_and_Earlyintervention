@@ -83,5 +83,5 @@ Example insight:
 The model is deployed using Streamlit.
 
 🔗 Live App: 
-https://project2studentperformancepredictionandearlyintervention-veita.streamlit.app/
+https://project2studentperformancepredictionandearlyintervention-avbc8.streamlit.app/
 
