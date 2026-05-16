@@ -2,7 +2,7 @@
 | Name | Reg No | Course |
 | --- | --- | --- |
 | Aiswarya S | 253302  | MSc Datascience and Geoinformatics |
-| [Member B Name] | [Reg No] | [Course] |
+| Sanika J R | 253210 |  MSc DataScience and BioAI |
 | Arun P S| 253206 | MSc DataScience and BioAI |
 
 ## Problem Statement
