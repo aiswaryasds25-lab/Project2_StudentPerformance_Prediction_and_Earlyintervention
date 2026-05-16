@@ -9,7 +9,8 @@
 Predict whether students will pass or fail using academic and demographic data, and identify at-risk students early.
 
 ## Dataset
-UCI Student Performance Dataset
+
+The dataset used is included in the `dataset/` folder: `student_mat.csv`
 
 ##  Motivation
 
