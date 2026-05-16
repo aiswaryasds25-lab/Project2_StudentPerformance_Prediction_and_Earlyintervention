@@ -1,7 +1,7 @@
 ## Team Members
 | Name | Reg No | Course |
 | --- | --- | --- |
-| [Member A Name] | [Reg No] | [Course] |
+| Aiswarya S] | 253302  | MSc Datascience and Geoinformatics |
 | [Member B Name] | [Reg No] | [Course] |
 | Arun P S| 253206 | MSc DataScience and BioAI |
 
