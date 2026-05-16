@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import dill
 import os
 
 BASE_DIR = os.path.dirname(__file__)
@@ -62,7 +63,8 @@ with col2:
 import lime.lime_tabular
 import matplotlib.pyplot as plt
 
-explainer = joblib.load(os.path.join(BASE_DIR, "lime_explainer.pkl"))
+with open(os.path.join(BASE_DIR, "lime_explainer.pkl"), "rb") as f:
+    explainer = dill.load(f)
 
 st.subheader("🔍 LIME Explanation — Why this prediction?")
 exp = explainer.explain_instance(
