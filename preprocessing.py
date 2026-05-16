@@ -9,7 +9,7 @@ def preprocess_df(df: pd.DataFrame) -> pd.DataFrame:
     if 'G3' in df.columns:
         df['result'] = (df['G3'] >= 10).astype(int)
 
-    # drop leakage column if present
+    
     if 'G3' in df.columns:
         df = df.drop(columns=['G3'])
 
