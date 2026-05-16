@@ -83,6 +83,12 @@ Example insight:
 ##  Deployment
 
 The model is deployed using Streamlit.
+### App Features
+- 🎯 Predict student Pass/Fail based on academic and demographic inputs
+- 📊 View prediction confidence (Pass/Fail probability)
+- 🔍 LIME explanation showing which factors influenced the prediction
+- 🚨 Counselor intervention suggestions for at-risk students
+  
 <img width="1148" height="598" alt="WhatsApp Image 2026-05-16 at 10 41 10" src="https://github.com/user-attachments/assets/7b761077-e751-4736-9874-b6eb0204d772" />
 
 🔗 Live App: 
