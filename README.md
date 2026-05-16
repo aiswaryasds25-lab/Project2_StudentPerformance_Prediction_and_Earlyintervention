@@ -81,6 +81,7 @@ Example insight:
 ##  Deployment
 
 The model is deployed using Streamlit.
+<img width="1148" height="598" alt="WhatsApp Image 2026-05-16 at 10 41 10" src="https://github.com/user-attachments/assets/7b761077-e751-4736-9874-b6eb0204d772" />
 
 🔗 Live App: 
 https://project2studentperformancepredictionandearlyintervention-avbc8.streamlit.app/
