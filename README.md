@@ -12,6 +12,8 @@ Predict whether students will pass or fail using academic and demographic data, 
 
 The dataset used is included in the `dataset/` folder: `student_mat.csv`
 
+**Source:** [UCI Student Performance Dataset](https://archive.ics.uci.edu/dataset/320/student+performance)
+
 ##  Motivation
 
 Student performance prediction is important for:
