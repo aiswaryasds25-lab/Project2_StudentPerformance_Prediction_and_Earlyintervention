@@ -1,7 +1,9 @@
 ## Team Members
-- Aiswarya S
-- Arun P.S
-- Sanika J.R
+| Name | Reg No | Course |
+| --- | --- | --- |
+| [Member A Name] | [Reg No] | [Course] |
+| [Member B Name] | [Reg No] | [Course] |
+| Arun P S| 253206 | MSc DataScience and BioAI |
 
 ## Problem Statement
 Predict whether students will pass or fail using academic and demographic data, and identify at-risk students early.
