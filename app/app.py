@@ -1,13 +1,25 @@
 
 import streamlit as st
 import pandas as pd
+import numpy as np
 import joblib
 import os
+import lime.lime_tabular
+import matplotlib.pyplot as plt
 
 BASE_DIR = os.path.dirname(__file__)
 
-model = joblib.load(os.path.join(BASE_DIR, "model.pkl"))
+model         = joblib.load(os.path.join(BASE_DIR, "model.pkl"))
 feature_names = joblib.load(os.path.join(BASE_DIR, "feature_names.pkl"))
+X_train       = joblib.load(os.path.join(BASE_DIR, "X_train.pkl"))
+
+# Build LIME explainer on the fly
+explainer = lime.lime_tabular.LimeTabularExplainer(
+    training_data=X_train,
+    feature_names=feature_names,
+    class_names=["Fail", "Pass"],
+    mode="classification"
+)
 
 st.set_page_config(page_title="Student Performance Predictor", layout="wide")
 st.title("🎓 Student Performance Prediction & Early Intervention")
@@ -58,12 +70,6 @@ with col2:
                     "Failures": failures, "Absences": absences, "Age": age}
     st.table(pd.DataFrame(key_features.items(), columns=["Feature", "Value"]))
 
-
-import lime.lime_tabular
-import matplotlib.pyplot as plt
-
-explainer = joblib.load(os.path.join(BASE_DIR, "lime_explainer.pkl"))
-
 st.subheader("🔍 LIME Explanation — Why this prediction?")
 exp = explainer.explain_instance(
     input_df.values[0],
@@ -78,7 +84,6 @@ st.markdown("**Key contributing factors:**")
 for feat, weight in exp.as_list():
     arrow = "🟢" if weight > 0 else "🔴"
     st.write(f"{arrow} `{feat}` — impact: {weight:.4f}")
-
 
 if pred == 0:
     st.subheader("🚨 Counselor Intervention Suggestions")
